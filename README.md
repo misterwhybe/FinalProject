@@ -1,7 +1,9 @@
 # FinalProject
 This is the repository of the final project. I will be working on this in january
 
-Wiebe Jelsma
+# How happy are we really?
+By: Wiebe Jelsma
+Create the map of europe with different levels of happiness for each country. Specify which year or country you want to see. Each colour is a different level (0-10) to show how it changed in less-developed countries. 
 
 ## Problem statement:
 A lot is changing in the world nowadays. A lot of people my age don't even
