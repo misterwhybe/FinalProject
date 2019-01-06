@@ -3,25 +3,23 @@ This is the repository of the final project. I will be working on this in Januar
 
 # How happy are we really?
 By: Wiebe Jelsma.
-Create the map of Europe with different levels of happiness for each country. Specify which year or country you want to see. Each colour is a different level (0-10) to show how it changed in less-developed countries. 
+Create the map of the World with different levels of happiness for each country. Specify which year or country you want to see. Each colour is a different level (0-10) to show how it changed in less-developed countries.
+I will use the World Happiness Report. I will download the report of 2018, because it contains the years 2005-2017 per country. 
+http://worldhappiness.report/download/
+Hereby, i can specify which country has which happiness score in which year. The item I will use is the Life ladder. It asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. This will give a mean per year per country.
 
 ## Problem statement:
-A lot is changing in the world nowadays. A lot of people my age don't even
-know how life was when the soviet union was still there.
-Europe was divided, but now? I want to show the transition of the happiness
-for all of the European countries.
-We must realize that we are Europe, and that the countries in Europe are kind of similar.
-That is why i want to show that the level of happiness did increase a lot over the last several years.
+The whole world is changing all the time. We must not forget that countries change a lot, and underdeveloped countries might be completely different 10 years later. 
 
-My map will show the transition in the level of happiness over the years for all european countries.
-My map should have different colours for the different levels, and it's a map of Europe.
-We start like 20 years ago, and slowely the years will increase and thereby the colours will change.
-I think that first we will see a lot of difference between eastern and western Europe, but this difference will be decreasing.
+My map will show the transition in the level of happiness over the years for all countries.
+My map should have different colours for the different levels, and it's a map of the World.
+We start like 10 years ago, and slowely the years will increase and thereby the colours will change.
+I think that first we will see a lot of difference between eastern and western countries, but this difference will be decreasing.
 You can select specific years to compare scores of countries.
 If you specify a country, you can see the different levels over the years.
 
 ## MVP:
-Having the map of Europe, have different colours for the levels of happiness.
+Having the map, have different colours for the levels of happiness.
 Being able to control the specific years so you can compare other countries.
 Selecting countries to have a history of the happiness.
 
@@ -33,12 +31,10 @@ Moving cursor over countries to get the level of happiness.
 I wont be using gender but years.
 
 ### Prerequisites:
-Data source: European Social Survey. Every 2 years they conduct surveys to determine a lot of things in a country,
-one of them is the happiness. With this I can deduct the score. https://www.europeansocialsurvey.org/data/country_index.html
-It starts in 2002. I can download the data into an SPSS file. There, I either calculate the level of happiness and put
-the score into an excel file, or see if i can put it in an excel file already.
-If that would be difficult, I would use something like this. https://www.kaggle.com/unsdsn/world-happiness. 
-This is only for the last 3 years, but i'm sure I can find more.
+I will get the data from http://worldhappiness.report/download/. Here, we can get the years 2005-2017 per country. 
+I will use a map or the world from http://datamaps.github.io/.
+The other dataset i will be using is the amount of cannabis is used per country https://dataunodc.un.org/drugs/prevalence_table.
+Hereby, we can see if there is a correlation between the happiness level and the usage of cannabis. 
 
 ### External Compounts: 
 No idea yet.
