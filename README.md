@@ -27,7 +27,7 @@ Selecting countries to have a history of the happiness.
 Moving cursor over countries to get the level of happiness.
 
 ### Visual Scetch:
-![scetch](https://user-images.githubusercontent.com/44019712/48985304-5d2b0b80-f106-11e8-896c-b6a96508c6b8.jpg)
+![doc/scetch](https://user-images.githubusercontent.com/44019712/48985304-5d2b0b80-f106-11e8-896c-b6a96508c6b8.jpg)
 I wont be using gender but years.
 
 ### Prerequisites:
