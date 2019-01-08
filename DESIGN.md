@@ -17,7 +17,7 @@ It is found on https://ourworldindata.org/substance-use.
 The data is cleaned in cannabis.py.
 I also want a dataset which shows how much drugs is being used in a country, but this dataset is harder to obtain.
 
-![Knipsel]
+![Knipsel.PNG]
 Here, we can see the basic of what I will do.
 We will start with the worldmap, different colours per life ladder average.
 If a country is clicked, there will be a chart bar showing how much drugs people use in a country, and a piechart showing how many people die because of drugs and die because of alcohol.
