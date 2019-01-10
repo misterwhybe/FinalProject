@@ -2,7 +2,7 @@ Wiebe Jelsma, 12468223
 Process Book of Programmeerproject
 January 2019
 
-Day #1 (Wednesday, 09-01-2019)
+# Day 1 (Wednesday, 09-01-2019)
 Today I spend some time on my datasets. Now, I have two.
 It was a bit difficult, because I had to reform them a bit.
 Also, some of the names of the columns contained two words.
@@ -15,3 +15,9 @@ Maybe I can do something like:
 if year != 2008:
     i += year - 2008
 This way, it is calculated how much difference there is between the current chosen year and 2008, and this amount is added to i so it takes the next year.
+
+# Day 2 (Thursday, 10-01-2019)
+Today I finished my world map.
+The map is now interactive, if you hover over the country you can see the Life Ladder value of 2008, if you click it a bar chart will pop up to show how the Life Ladder developed over the last 10 years.
+The bar chart works as well.
+The countries in the world map also have a colour which devides them into the Life Ladder level, so it is easier to see which countries are on the same Life Ladder.
