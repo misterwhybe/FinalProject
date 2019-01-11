@@ -21,3 +21,9 @@ Today I finished my world map.
 The map is now interactive, if you hover over the country you can see the Life Ladder value of 2008, if you click it a bar chart will pop up to show how the Life Ladder developed over the last 10 years.
 The bar chart works as well.
 The countries in the world map also have a colour which devides them into the Life Ladder level, so it is easier to see which countries are on the same Life Ladder.
+
+# Day 3 (Friday, 11-01-2019)
+The bar chart was not working perfectly, so today I made it work nicely.
+Some data is missing, so if the year is missing I had to make sure we would show a blank bar, but before it would fill the blank space with other country's data, so now it is fixed.
+It was more difficult than expected, but now it works!
+I tried to make a pie-chart, but it is not working yet

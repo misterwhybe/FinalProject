@@ -51,12 +51,15 @@ window.onload = function(){
                         if(countriesHappiness.includes(d.properties.name)){
                             var place = countriesHappiness.indexOf(d.properties.name)
                             HappinessMark = happiness[place]
+                            happinessPlace = happinessYears[place]
                         }
                     // Show household income if someone hovers over the country
                         return "<strong>Country: </strong><span class= \
                         'details'>" + d.properties.name + "<br></span>" 
                         +"<strong>Life Ladder:  </strong><span \
-                        class='details'>" + HappinessMark + "<br></span>"
+                        class='details'>" + HappinessMark + "<br></span>" 
+                        +"<strong>Year:  </strong><span class='details'>" 
+                        + happinessPlace + "<br></span>"
                     })
         // Right margins and coordinates for the map
         var margin = {top: 20, right: 0, bottom: 0, left: 50},
@@ -131,29 +134,22 @@ window.onload = function(){
                     HappinessNumber = 0
                     if(countriesHappiness.includes(d.properties.name)){
                         var place = countriesHappiness.indexOf(d.properties.name)
-                        Happiness2008 = happiness[place]
-                        Happiness2009 = happiness[place + 1]
-                        Happiness2010 = happiness[place + 2]
-                        Happiness2011 = happiness[place + 3]
-                        Happiness2012 = happiness[place + 4]
-                        Happiness2013 = happiness[place + 5]
-                        Happiness2014 = happiness[place + 6]
-                        Happiness2015 = happiness[place + 7]
-                        Happiness2016 = happiness[place + 8]
-                        Happiness2017 = happiness[place + 9]
-                        // Put all data in a dictionary, give it to the barchart
-                        data.push({name: d.properties.name, 
-                            value: Happiness2008},
-                            {name: d.properties.name, value: Happiness2009},
-                            {name: d.properties.name, value: Happiness2010},
-                            {name: d.properties.name, value: Happiness2011},
-                            {name: d.properties.name, value: Happiness2012},
-                            {name: d.properties.name, value: Happiness2013},
-                            {name: d.properties.name, value: Happiness2014},
-                            {name: d.properties.name, value: Happiness2015},
-                            {name: d.properties.name, value: Happiness2016},
-                            {name: d.properties.name, value: Happiness2017})
-    
+                        var yearCorrect = 0
+                        for(i=0; i<13; i++){
+                            Happiness2008 = happiness[(place + i - yearCorrect)]
+                            yearOfHappiness = happinessYears[(place + i - yearCorrect)]
+                            yearCheck = 2005 + i
+                            if(yearOfHappiness == yearCheck){
+                                data.push({name: d.properties.name, 
+                                value: Happiness2008, year : yearOfHappiness})
+                            }
+                            else{
+                                yearCorrect++
+                                data.push({name: d.properties.name,
+                                value: 0, year: yearOfHappiness})
+                            } 
+  
+                        }  
                         make_barchart(data)
                     }
                     dataPie = []
@@ -220,7 +216,7 @@ window.onload = function(){
                 var padding = 20;
                 // Specify different colors per bar
                 var colors = d3.scaleLinear()
-                                .domain([0, 10])
+                                .domain([0, 13])
                                 .range(["#d9f0a3","#004529"]);
                                 // .range(["red", "green"])
         
@@ -246,7 +242,7 @@ window.onload = function(){
                 var yAxis = d3.axisLeft(yScale);
 
                 var xScale = d3.scaleBand()
-                    .domain(d3.range(0,10))
+                    .domain(d3.range(0,13))
                     .range([margin.right, width - margin.right - margin.left])
 
                     // Add everything we need for the bar to the barchart
@@ -255,9 +251,21 @@ window.onload = function(){
                             .data(data)
                             .enter()
                             .append("rect")
-                            .attr("width", width / 11)
+                            .attr("width", width / 14)
                             .attr("height", function(d){
-                            return height - yScale(d.value) ;
+                                return height - yScale(d.value) ;
+                                // for(i=2005; i<2018; i++){
+                                //     console.log(i)
+                                //     if(d.year == i){
+                                //         console.log(d.year)
+                                        
+                                //         return height - yScale(d.value) ;
+                                //     }
+                                //     // else if(d.year != i){
+                                //     //     return height - height
+                                //     // }
+                                // }
+                            
                             })
                             .attr("x", function(d, i) {
                             return xScale(i) + margin.left
@@ -287,7 +295,7 @@ window.onload = function(){
                                 })
                             
                     var hScale =  d3.scaleBand()
-                    .domain(["2008","2009","2010","2011","2012","2013","2014",
+                    .domain(["2005","2006","2007","2008","2009","2010","2011","2012","2013","2014",
                     "2015","2016","2017"])
                     .range([margin.left, width - margin.right])
         
@@ -304,29 +312,57 @@ window.onload = function(){
                             .attr("transform", "translate("+[margin.left, 0]+")")
                             .call(yAxis)
                 
-                    // barchart.append("text")
-                    //     .data(data)
-                    //     .attr("x", width / 2)
-                    //     .attr("y", margin.top)
-                    //     .attr("text-anchor", "middle")
-                    //     .style("font-family", "sans-sherif")
-                    //     .style("font-size", "20px")
-                    //     .style("font-weight", "bold")
-                        // .text(function(d){
-                        //     return d.name;
-                        // });
+                    barchart.append("text")
+                        .data(data)
+                        .attr("x", width / 2)
+                        .attr("y", margin.top)
+                        .attr("text-anchor", "middle")
+                        .style("font-family", "sans-sherif")
+                        .style("font-size", "15px")
+                        .style("font-weight", "bold")
+                        .text(function(d){
+                            return d.name +", Life Ladder years 2005-2017";
+                        });
             };
+
             function make_piechart(dataPie){
+                console.log(dataPie[0].value)
+                var margin = { top: 50, right: 50, bottom: 50, left: 50 },
+                width = screen.width - margin.left - margin.right,
+                height = 650 - margin.top - margin.bottom;
                 
-                // var width = 600;
-                // var height = 500;
-                // var svg = d3.select("body")
-                //             .append("svg")
-                //             .attr("width", width)
-                //             .attr("height", height)
-                //             .style("background", "pink")
-                // console.log(DeathsAlcohol)
-                // console.log(DeathsDrugs)
+                radius = height /2;
+
+                var arc = d3.arc()
+                            .outerRadius(radius)
+                            .innerRadius(radius - 200)
+
+                var pie = d3.pie()
+                            .value(function(d) {
+                            return d;
+                            });
+
+                var svg = d3.select("body")
+                            .append("svg")
+                            .attr("id", "piechartsvg")
+                            .attr("width", width)
+                            .attr("height", height)
+                            .style("background", "white")
+                            .append("g")
+                            .attr("transform", "translate(" + width /2 + "," + height /2 + ")")
+
+
+                var g = svg.selectAll("arc")
+                            .data(pie(dataPie[0].value))
+                            .enter()
+                            .append("a")
+                            .attr("class", "arc")
+
+                    g.append("path")
+                    .attr("d", arc)
+                    .style("fill", "red")
+  
+
             }
     }).catch(function(e){
         throw(e);
