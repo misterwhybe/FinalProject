@@ -159,18 +159,11 @@ window.onload = function(){
                         DeathsDrugs = drugsDeaths[placeDeaths]
                         dataPie.push({name: d.properties.name, value: DeathsAlcohol},
                             {name: d.properties.name, value: DeathsDrugs})
-                        make_piechart(dataPie)
+                        make_piechart(data)
                     }
-
-                    // If we don't have data of the country, use the OECD avaerage
-                    // else{
-                    //     Life = life[life.length - 1]
-                    //     Education = educationYears[educationYears.length - 1]
-                    //     data.push({name: "Average of OECD", value: Life}, {name: 
-                    //         "Average of OECD", value: Education})
-                    //     make_barchart(data)
-                    // }
+                    
                     })
+                    
                 // If the cursor moves away from the country, stop showing data 
                 .on('mouseout', function(d){
                     tip.hide(d);
@@ -217,7 +210,7 @@ window.onload = function(){
                 // Specify different colors per bar
                 var colors = d3.scaleLinear()
                                 .domain([0, 13])
-                                .range(["#d9f0a3","#004529"]);
+                                .range(["#78c679"]);
                                 // .range(["red", "green"])
         
                 var tooltip = d3.select("body")
@@ -251,20 +244,9 @@ window.onload = function(){
                             .data(data)
                             .enter()
                             .append("rect")
-                            .attr("width", width / 14)
+                            .attr("width", width / 17)
                             .attr("height", function(d){
                                 return height - yScale(d.value) ;
-                                // for(i=2005; i<2018; i++){
-                                //     console.log(i)
-                                //     if(d.year == i){
-                                //         console.log(d.year)
-                                        
-                                //         return height - yScale(d.value) ;
-                                //     }
-                                //     // else if(d.year != i){
-                                //     //     return height - height
-                                //     // }
-                                // }
                             
                             })
                             .attr("x", function(d, i) {
@@ -273,9 +255,9 @@ window.onload = function(){
                             .attr("y", function(d){
                             return yScale(d.value);
                             })
-                            .attr("fill", function(d,i) {
-                                return colors(i);
-                            })
+                            .attr("fill",
+                            "#238443"
+                            )
                             // If the cursor touches the barchart, show the value
                             .on('mouseover', function(d){
                                 tooltip.transition()
@@ -325,45 +307,88 @@ window.onload = function(){
                         });
             };
 
-            function make_piechart(dataPie){
-                console.log(dataPie[0].value)
-                var margin = { top: 50, right: 50, bottom: 50, left: 50 },
-                width = screen.width - margin.left - margin.right,
-                height = 650 - margin.top - margin.bottom;
+            // function make_piechart(dataPie){
+            //     console.log(dataPie[0].value)
+            //     var margin = { top: 50, right: 50, bottom: 50, left: 50 },
+            //     width = screen.width - margin.left - margin.right,
+            //     height = 650 - margin.top - margin.bottom;
                 
-                radius = height /2;
+            //     radius = height /2;
 
-                var arc = d3.arc()
-                            .outerRadius(radius)
-                            .innerRadius(radius - 200)
+            //     var arc = d3.arc()
+            //                 .outerRadius(radius)
+            //                 .innerRadius(radius - 200)
 
-                var pie = d3.pie()
-                            .value(function(d) {
-                            return d;
-                            });
+            //     var pie = d3.pie()
+            //                 .value(function(d) {
+            //                 return d;
+            //                 });
 
-                var svg = d3.select("body")
-                            .append("svg")
-                            .attr("id", "piechartsvg")
-                            .attr("width", width)
-                            .attr("height", height)
-                            .style("background", "white")
-                            .append("g")
-                            .attr("transform", "translate(" + width /2 + "," + height /2 + ")")
+            //     var svg = d3.select("body")
+            //                 .append("svg")
+            //                 .attr("id", "piechartsvg")
+            //                 .attr("width", width)
+            //                 .attr("height", height)
+            //                 .style("background", "white")
+            //                 .append("g")
+            //                 .attr("transform", "translate(" + width /2 + "," + height /2 + ")")
 
 
-                var g = svg.selectAll("arc")
-                            .data(pie(dataPie[0].value))
-                            .enter()
-                            .append("a")
-                            .attr("class", "arc")
+            //     var g = svg.selectAll("arc")
+            //                 .data(pie(dataPie[0].value))
+            //                 .enter()
+            //                 .append("a")
+            //                 .attr("class", "arc")
 
-                    g.append("path")
-                    .attr("d", arc)
-                    .style("fill", "red")
+            //         g.append("path")
+            //         .attr("d", arc)
+            //         .style("fill", "red")
   
 
-            }
+            // }
+        function make_piechart(dataPie){
+            var data = [10, 20, 100];
+
+        var width = 960,
+            height = 500,
+            radius = Math.min(width, height) / 2;
+
+        var color = d3.scaleOrdinal()
+            .range(["#98abc5", "#8a89a6", "#7b6888"]);
+
+        var arc = d3.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(0);
+
+        var labelArc = d3.arc()
+            .outerRadius(radius - 40)
+            .innerRadius(radius - 40);
+
+        var pie = d3.pie()
+            .sort(null)
+            .value(function(d) { return d; });
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+        .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        var g = svg.selectAll(".arc")
+            .data(pie(data))
+            .enter().append("g")
+            .attr("class", "arc");
+
+        g.append("path")
+            .attr("d", arc)
+            .style("fill", function(d) { return color(d.data); });
+
+        g.append("text")
+            .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+            .attr("dy", ".35em")
+            .text(function(d) { return d.data; });
+        }
+                
     }).catch(function(e){
         throw(e);
     });

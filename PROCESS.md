@@ -27,3 +27,9 @@ The bar chart was not working perfectly, so today I made it work nicely.
 Some data is missing, so if the year is missing I had to make sure we would show a blank bar, but before it would fill the blank space with other country's data, so now it is fixed.
 It was more difficult than expected, but now it works!
 I tried to make a pie-chart, but it is not working yet
+
+# Day 4 (monday, 14-01-2019)
+Today was a bad day.
+I tried to fix my pie chart, but i did not improve.
+However, I found a nice example, so I can try to use it tomorrow.
+Maybe, then I can fix my pie chart. I'll keep you updated!
