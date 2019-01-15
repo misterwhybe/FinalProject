@@ -39,7 +39,6 @@ window.onload = function(){
             drugsDeaths.push(Object.values(Deaths.DrugsDeaths)[i])
 
         }
-        console.log(Deaths)
 
 
 
@@ -159,7 +158,7 @@ window.onload = function(){
                         DeathsDrugs = drugsDeaths[placeDeaths]
                         dataPie.push({name: d.properties.name, value: DeathsAlcohol},
                             {name: d.properties.name, value: DeathsDrugs})
-                        make_piechart(data)
+                        make_piechart(dataPie)
                     }
                     
                     })
@@ -307,47 +306,11 @@ window.onload = function(){
                         });
             };
 
-            // function make_piechart(dataPie){
-            //     console.log(dataPie[0].value)
-            //     var margin = { top: 50, right: 50, bottom: 50, left: 50 },
-            //     width = screen.width - margin.left - margin.right,
-            //     height = 650 - margin.top - margin.bottom;
-                
-            //     radius = height /2;
-
-            //     var arc = d3.arc()
-            //                 .outerRadius(radius)
-            //                 .innerRadius(radius - 200)
-
-            //     var pie = d3.pie()
-            //                 .value(function(d) {
-            //                 return d;
-            //                 });
-
-            //     var svg = d3.select("body")
-            //                 .append("svg")
-            //                 .attr("id", "piechartsvg")
-            //                 .attr("width", width)
-            //                 .attr("height", height)
-            //                 .style("background", "white")
-            //                 .append("g")
-            //                 .attr("transform", "translate(" + width /2 + "," + height /2 + ")")
-
-
-            //     var g = svg.selectAll("arc")
-            //                 .data(pie(dataPie[0].value))
-            //                 .enter()
-            //                 .append("a")
-            //                 .attr("class", "arc")
-
-            //         g.append("path")
-            //         .attr("d", arc)
-            //         .style("fill", "red")
-  
-
-            // }
+           
         function make_piechart(dataPie){
-            var data = [10, 20, 100];
+            var data = [dataPie[0].value, dataPie[1].value];
+            console.log(data)
+            console.log(dataPie[0].value)
 
         var width = 960,
             height = 500,
