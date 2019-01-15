@@ -1,6 +1,5 @@
 This is the style guide for group E (Data, Winter)
 We will use two seperate style guides, one for D3 and one for Javascript.
-We will be using CamelCase throughout our code, so if we write two words after each other we will write it as twoWords.
 The double Quotation mark will be used, so if it is needed we will use "".   
 
 ## D3 Style guide:
@@ -66,7 +65,6 @@ Use one space before the opening bracket.
 Put the closing bracket on a new line, without leading spaces.
 Do not end a complex statement with a semicolon.
 
-
 General rules for object definitions:
 Place the opening bracket on the same line as the object name.
 Use colon plus one space between each property and its value.
@@ -85,5 +83,3 @@ Always use the same naming convention for all your code. For example:
 Variable and function names written as camelCase
 Global variables written in UPPERCASE (We don't, but it's quite common)
 Constants (like PI) written in UPPERCASE
-
-

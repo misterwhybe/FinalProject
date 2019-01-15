@@ -33,3 +33,7 @@ Today was a bad day.
 I tried to fix my pie chart, but i did not improve.
 However, I found a nice example, so I can try to use it tomorrow.
 Maybe, then I can fix my pie chart. I'll keep you updated!
+
+# Day 5(Tuesday, 15-01-2019)
+Okay, the pie chart works as well!
+It is still not beautiful, so it needs some polishing, but at least it responds

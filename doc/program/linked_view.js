@@ -17,8 +17,6 @@ window.onload = function(){
         var Data = response[0]
         var Happiness = response[1]
         var Deaths = response[2]
-        console.log(Happiness)
-
         var countriesHappiness = []
         happinessYears = []
         var happiness = []
@@ -39,8 +37,6 @@ window.onload = function(){
             drugsDeaths.push(Object.values(Deaths.DrugsDeaths)[i])
 
         }
-
-
 
         // Set tooltips
         var tip = d3.tip()
@@ -68,7 +64,7 @@ window.onload = function(){
         var color = d3.scaleThreshold()
             .domain(["No data",1,2,3,4,5,6,7,8,9,10])
             .range(["black" ,"#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", 
-                "#41ab5d","#238443","#006837","#004529", "#002529", "#000000"]);
+                "#41ab5d","#238443","#006837","#004529", "#002529", "#001416"]);
         
          var path = d3.geoPath();
 
@@ -128,6 +124,7 @@ window.onload = function(){
                 })
                 // Get rid of old barchart and make a new one when country clicked
                 .on("click", function (d){
+                    d3.select("#piechart > *").remove()
                     d3.select("#chart > *").remove()
                     var data = [];
                     HappinessNumber = 0
@@ -159,8 +156,7 @@ window.onload = function(){
                         dataPie.push({name: d.properties.name, value: DeathsAlcohol},
                             {name: d.properties.name, value: DeathsDrugs})
                         make_piechart(dataPie)
-                    }
-                    
+                    }      
                     })
                     
                 // If the cursor moves away from the country, stop showing data 
@@ -206,11 +202,6 @@ window.onload = function(){
                 var height = 380 - margin.top - margin.bottom;
         
                 var padding = 20;
-                // Specify different colors per bar
-                var colors = d3.scaleLinear()
-                                .domain([0, 13])
-                                .range(["#78c679"]);
-                                // .range(["red", "green"])
         
                 var tooltip = d3.select("body")
                                 .append("div")
@@ -238,7 +229,7 @@ window.onload = function(){
                     .range([margin.right, width - margin.right - margin.left])
 
                     // Add everything we need for the bar to the barchart
-                    barchart.append('g')
+                    barchart.append("g")
                             .selectAll("rect")
                             .data(data)
                             .enter()
@@ -308,48 +299,61 @@ window.onload = function(){
 
            
         function make_piechart(dataPie){
-            var data = [dataPie[0].value, dataPie[1].value];
-            console.log(data)
-            console.log(dataPie[0].value)
+          alcohol = Math.round(dataPie[0].value)
+          drugs = Math.round(dataPie[1].value)
+          var data = [alcohol, drugs]
 
-        var width = 960,
+          var width = 560,
             height = 500,
-            radius = Math.min(width, height) / 2;
+            radius = height / 2;
 
-        var color = d3.scaleOrdinal()
+          var color = d3.scaleOrdinal()
             .range(["#98abc5", "#8a89a6", "#7b6888"]);
 
-        var arc = d3.arc()
+          var arc = d3.arc()
             .outerRadius(radius - 10)
             .innerRadius(0);
 
-        var labelArc = d3.arc()
+          var labelArc = d3.arc()
             .outerRadius(radius - 40)
             .innerRadius(radius - 40);
 
-        var pie = d3.pie()
+          var pie = d3.pie()
             .sort(null)
             .value(function(d) { return d; });
 
-        var svg = d3.select("body").append("svg")
+          var svg = d3.select("#piechart")
+            .append("svg")
             .attr("width", width)
             .attr("height", height)
-        .append("g")
+            .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        var g = svg.selectAll(".arc")
+          var g = svg.selectAll(".arc")
             .data(pie(data))
-            .enter().append("g")
+            .enter()
+            .append("g")
             .attr("class", "arc");
 
-        g.append("path")
+          g.append("path")
             .attr("d", arc)
             .style("fill", function(d) { return color(d.data); });
 
-        g.append("text")
+          g.append("text")
             .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .attr("dy", ".35em")
+            .attr("dy", "0em")
             .text(function(d) { return d.data; });
+          svg.append("text")
+            // .data(data)
+            .attr("x", width / 20)
+            .attr("y", 250)
+            .attr("text-anchor", "middle")
+            .style("font-family", "sans-sherif")
+            .style("font-size", "12px")
+            .style("font-weight", "bold")
+            .text(function(d){
+                return "Amount of alcohol/drugs deaths";
+            });
         }
                 
     }).catch(function(e){
