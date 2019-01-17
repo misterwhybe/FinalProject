@@ -156,7 +156,9 @@ window.onload = function(){
                         dataPie.push({name: d.properties.name, value: DeathsAlcohol},
                             {name: d.properties.name, value: DeathsDrugs})
                         make_piechart(dataPie)
-                    }      
+                    }    
+                    makeSlider(deathsYears);
+  
                     })
                     
                 // If the cursor moves away from the country, stop showing data 
@@ -355,7 +357,56 @@ window.onload = function(){
                 return "Amount of alcohol/drugs deaths";
             });
         }
-                
+        function makeSlider(deathsYears){
+            // Draws the slider on the left side of the page
+            var dataTime = d3.range(0, 27).map(function(d) {
+              return new Date(1990 + d, 0,1);
+            });
+          
+            // Draws and updates the silder
+            var sliderTime = d3
+              .sliderRight()
+              .min(d3.min(dataTime))
+              .max(d3.max(dataTime))
+              .step(1)
+              .height(400)
+              .tickFormat(d3.timeFormat('%Y'))
+              .tickValues(dataTime)
+              .default(new Date(1990, 0, 1))
+              .on('onchange', val => {
+                  console.log(val)
+                updatePieChart(val, d3.timeFormat("%Y")(val))
+                 });
+          
+            // Creates a svg in the vertical direction
+            var gTime = d3
+              .select('div#slider-time')
+              .append('svg')
+              .attr('width', 100)
+              .attr('height', 500)
+              .append('g')
+              .attr('transform', 'translate(30,30)');
+          
+            // Cals the function to create svg and the slider
+            gTime.call(sliderTime);
+          
+            // Returns the value of the selected year
+            return d3.timeFormat("%Y")(sliderTime.value())
+          
+          }
+        function updatePieChart(val){
+            // d3.selectAll("#piechart")
+            startDate = 1990
+            newDate = val
+            if(startDate != newDate){
+                correction = newDate - startDate
+                console.log(newDate)
+                console.log(startDate)
+                console.log(correction)
+            }
+
+
+        }
     }).catch(function(e){
         throw(e);
     });

@@ -26,7 +26,7 @@ The countries in the world map also have a colour which devides them into the Li
 The bar chart was not working perfectly, so today I made it work nicely.
 Some data is missing, so if the year is missing I had to make sure we would show a blank bar, but before it would fill the blank space with other country's data, so now it is fixed.
 It was more difficult than expected, but now it works!
-I tried to make a pie-chart, but it is not working yet
+I tried to make a pie-chart, but it is not working yet.
 
 # Day 4 (monday, 14-01-2019)
 Today was a bad day.
@@ -36,4 +36,15 @@ Maybe, then I can fix my pie chart. I'll keep you updated!
 
 # Day 5(Tuesday, 15-01-2019)
 Okay, the pie chart works as well!
-It is still not beautiful, so it needs some polishing, but at least it responds
+It is still not beautiful, so it needs some polishing, but at least it responds.
+
+# Day 6 (Wednesday, 16-01-2019)
+I spend the day looking for a nice example of a slider. I want this for my piechart, so you can choose which year you want to see.
+I found https://github.com/d3/d3-dispatch#dispatch_on, which I use tomorrow to fix it. It was not a very good day for me.
+
+# Day 7 (Thursday, 17-01-2019)
+My slider works!
+At least, there is a slider and you can change the year, from 1990 to 2016.
+It is not interactive with the pie chart yet. I started to work on it, but it is not finished.
+Tomorrow and tonight I will work some more, to make sure everything is interactive and propper before the weekend.
+This way, I have next week to make everything look nice, make my code better and add the bootstrap to make my website a bit nicer.
