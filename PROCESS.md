@@ -48,3 +48,9 @@ At least, there is a slider and you can change the year, from 1990 to 2016.
 It is not interactive with the pie chart yet. I started to work on it, but it is not finished.
 Tomorrow and tonight I will work some more, to make sure everything is interactive and propper before the weekend.
 This way, I have next week to make everything look nice, make my code better and add the bootstrap to make my website a bit nicer.
+
+# Day 8 (Friday, 18-01-2019)
+I cannot seem to get my slider to work how I want it to work.
+It is not yet interactive, you can use the slider but the pie chart won't be updated. 
+Instead, I have been working on the code itself. The functions that make the visuals have their own files.
+If I can get the slider.js to work in my linked_view.js, I think the slider will also update the pie chart, which is what I want.
