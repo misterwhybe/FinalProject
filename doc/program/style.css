@@ -3,6 +3,28 @@ Wiebe Jelsma (12468223)
 Minor programmeren, Data processing
 17-12-2018
 */
+#header {
+    padding: 40px; /* some padding */
+    text-align: center; /* center the text */
+    background: #fffefe; /* green background */
+    color: #630f0f; /* white text color */
+  }
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Style the navigation bar links */
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
 #map {
     display: inline-block;
 }

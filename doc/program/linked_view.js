@@ -5,7 +5,7 @@
 */
 
 
-window.onload = function(){
+function visualization(){
     data = "world_countries.json"
     happiness = "happiness.json"
     deaths = "deaths.json"
@@ -82,7 +82,6 @@ window.onload = function(){
                 .duration(750);
 
         svg.call(tip);
-        makeSlider(deathsYears);
         ready(Data, Happiness, Deaths);
 
         function ready(Data, Happiness, Deaths) {
@@ -124,6 +123,48 @@ window.onload = function(){
                 .on("click", function (d){
                     d3.select("#piechart > *").remove()
                     d3.select("#chart > *").remove()
+                    d3.select("#slider-time > *").remove()
+                    makeSlider(deathsYears);
+                    function makeSlider(deathsYears){
+                        // Draws the slider on the left side of the page
+                        var dataTime = d3.range(0, 27).map(function(d) {
+                            return new Date(1990 + d, 0, 1);
+                        });
+                    
+                        // Draws and updates the silder
+                        var sliderTime = d3
+                            .sliderRight()
+                            .min(d3.min(dataTime))
+                            .max(d3.max(dataTime))
+                            .step(1)
+                            .height(400)
+                            .tickFormat(d3.timeFormat('%Y'))
+                            .tickValues(dataTime)
+                            .default(new Date(1990, 0, 1))
+                            .on('onchange', val => {
+                                startDate = 1990
+                                newDate0 = String(val)
+                                newDate = newDate0.split(" ")[3]
+                                correction = newDate - startDate
+                                newPieChart(correction);
+                                });
+                    
+                        // Creates a svg in the vertical direction
+                        var gTime = d3
+                            .select('div#slider-time')
+                            .append('svg')
+                            .attr('width', 100)
+                            .attr('height', 500)
+                            .append('g')
+                            .attr('transform', 'translate(30,30)');
+                    
+                        // Cals the function to create svg and the slider
+                        gTime.call(sliderTime);
+                    
+                        // Returns the value of the selected year
+                        return d3.timeFormat("%Y")(sliderTime.value())
+                    
+                        }
                     var data = [];
                     HappinessNumber = 0
                     if(countriesHappiness.includes(d.properties.name)){
@@ -146,16 +187,29 @@ window.onload = function(){
                         }  
                         make_barchart(data)
                     }
-                    
+                    function newPieChart(correction){
+                        dataPie = []
+                        d3.select("#piechart > *").remove()
+                        if(countriesDeaths.includes(d.properties.name)){
+                          var placeDeaths = countriesDeaths.indexOf(d.properties.name)
+                          DeathsAlcohol = alcoholDeaths[placeDeaths + correction]
+                          DeathsDrugs = drugsDeaths[placeDeaths + correction]
+                          dataPie.push({name: d.properties.name, value: DeathsAlcohol},
+                              {name: d.properties.name, value: DeathsDrugs})
+                          make_piechart(dataPie)
+                        }    
+                      } 
                     dataPie = []
+                    correction = 0
                     if(countriesDeaths.includes(d.properties.name)){
                         var placeDeaths = countriesDeaths.indexOf(d.properties.name)
-                        DeathsAlcohol = alcoholDeaths[placeDeaths]
-                        DeathsDrugs = drugsDeaths[placeDeaths ]
+                        DeathsAlcohol = alcoholDeaths[placeDeaths + correction]
+                        DeathsDrugs = drugsDeaths[placeDeaths + correction]
                         dataPie.push({name: d.properties.name, value: DeathsAlcohol},
                             {name: d.properties.name, value: DeathsDrugs})
                         make_piechart(dataPie)
-                    }    
+                    }
+                   
                     })
                 // If the cursor moves away from the country, stop showing data 
                 .on('mouseout', function(d){
@@ -193,21 +247,10 @@ window.onload = function(){
                         return d;
                         })
                     }
-        function updatePieChart(newDate){
-            // d3.selectAll("#piechart")
-            startDate = 1990
-            correction = newDate - startDate
-            
-            if(countriesDeaths.includes(d.properties.name)){
-                var placeDeaths = countriesDeaths.indexOf(d.properties.name)
-                DeathsAlcohol = alcoholDeaths[placeDeaths + correction]
-                DeathsDrugs = drugsDeaths[placeDeaths + correction]
-                dataPie.push({name: d.properties.name, value: DeathsAlcohol},
-                    {name: d.properties.name, value: DeathsDrugs})
-                make_piechart(dataPie)
-            }    
-        }
+     
+
     }).catch(function(e){
         throw(e);
     });
 };
+

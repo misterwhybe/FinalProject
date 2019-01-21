@@ -54,3 +54,8 @@ I cannot seem to get my slider to work how I want it to work.
 It is not yet interactive, you can use the slider but the pie chart won't be updated. 
 Instead, I have been working on the code itself. The functions that make the visuals have their own files.
 If I can get the slider.js to work in my linked_view.js, I think the slider will also update the pie chart, which is what I want.
+
+# Day 9 (Monday, 21-01-2019)
+The Piechart is finally interacting with the slider!
+The rest of the day I spend on bootstrap and trying to make my website look nicer.
+I will fine tune it more in the next days!
