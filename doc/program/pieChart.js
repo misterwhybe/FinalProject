@@ -6,6 +6,7 @@ function make_piechart(dataPie){
           var width = 560,
             height = 500,
             radius = height / 2;
+            padding = 10
 
           var color = d3.scaleOrdinal()
             .range(["#98abc5", "#8a89a6", "#7b6888"]);
@@ -52,6 +53,33 @@ function make_piechart(dataPie){
             .style("font-size", "12px")
             .style("font-weight", "bold")
             .text(function(d){
-                return "Amount of alcohol/drugs deaths";
+                return dataPie[0].name +", Amount of alcohol/drugs deaths";
             });
+          // Make legend
+          legend = svg.selectAll("#piechart")
+          .data(["Alcohol Deaths","Drugs Deaths"])
+          .enter()
+          .append("g")
+          .attr("class", ".legend")
+          .attr("transform", function(d, i) { 
+            console.log(i)
+              return "translate(0," + i + 100 + ")"; 
+          });
+        // Fill in all colors of the legend
+        legend.append("rect")
+          .attr("x", width - padding - 100)
+          .attr("y", 5)
+          .attr("width", width)
+          .attr("height", height)
+          .style("fill", d => color(d))
+
+        // Add text to legend
+        legend.append("text")
+              .attr("x", width - 85)
+              .attr("y", height)
+              .style("color", "#FFF")
+              .text(function(d){
+              return d;
+              })
+          
         }

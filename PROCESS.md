@@ -59,3 +59,7 @@ If I can get the slider.js to work in my linked_view.js, I think the slider will
 The Piechart is finally interacting with the slider!
 The rest of the day I spend on bootstrap and trying to make my website look nicer.
 I will fine tune it more in the next days!
+
+# Day 10 (Tuesday, 22-01-2019)
+I spend the day changing my layout, adding a homepage and a navbar, changing my code a little bit.
+I added some style, different html's and some more styling

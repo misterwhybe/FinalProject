@@ -49,7 +49,7 @@ function visualization(){
                         return "<strong>Country: </strong><span class= \
                         'details'>" + d.properties.name + "<br></span>" 
                         +"<strong>Life Ladder:  </strong><span \
-                        class='details'>" + HappinessMark + "<br></span>" 
+                        class='details'>" + HappinessMark.toFixed(2) + "<br></span>" 
                         +"<strong>Year:  </strong><span class='details'>" 
                         + happinessPlace + "<br></span>"
                     })
@@ -176,7 +176,7 @@ function visualization(){
                             yearCheck = 2005 + i
                             if(yearOfHappiness == yearCheck){
                                 data.push({name: d.properties.name, 
-                                value: Happiness2008, year : yearOfHappiness})
+                                value: Happiness2008.toFixed(2), year : yearOfHappiness})
                             }
                             else{
                                 yearCorrect++
@@ -222,7 +222,6 @@ function visualization(){
                 });
                 // Make legend
                 legend = svg.selectAll("#map")
-                            // .data([0-1,1-2,2-3,3-4,4-5,5-6,6-7,7-8,8-9,9-10])
                             .data(["No data",1,2,3,4,5,6,7,8,9,10])
                             .enter()
                             .append("g")

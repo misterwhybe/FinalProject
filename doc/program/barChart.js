@@ -3,7 +3,10 @@ function make_barchart(data){
                 var margin = {top: 15, right: 5, bottom: 60, left: 25};
                 var width = 480 - margin.left - margin.right;
                 var height = 380 - margin.top - margin.bottom;
-                
+                var color = d3.scaleThreshold()
+                .domain(["No data",1,2,3,4,5,6,7,8,9,10])
+                .range(["black" ,"#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", 
+                    "#41ab5d","#238443","#006837","#004529", "#002529", "#001416"]);
                 var tooltip = d3.select("body")
                                 .append("div")
                                 .style('position','absolute')
@@ -46,8 +49,9 @@ function make_barchart(data){
                             .attr("y", function(d){
                             return yScale(d.value);
                             })
-                            .attr("fill",
-                            "#238443"
+                            .attr("fill",function(d){
+                                return color(d.value)
+                            }
                             )
                             // If the cursor touches the barchart, show the value
                             .on('mouseover', function(d){
