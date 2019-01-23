@@ -1,19 +1,20 @@
 function make_piechart(dataPie){
           alcohol = Math.round(dataPie[0].value)
           drugs = Math.round(dataPie[1].value)
+
           var data = [alcohol, drugs]
 
-          var width = 560,
-            height = 500,
-            radius = height / 2;
+          var width = 660,
+            height = 600,
+            radius = height / 3;
             padding = 10
 
           var color = d3.scaleOrdinal()
-            .range(["#98abc5", "#8a89a6", "#7b6888"]);
+            .range(["#525252", "#bdbdbd"]);
 
           var arc = d3.arc()
             .outerRadius(radius - 10)
-            .innerRadius(0);
+            .innerRadius(100);
 
           var labelArc = d3.arc()
             .outerRadius(radius - 40)
@@ -42,44 +43,39 @@ function make_piechart(dataPie){
 
           g.append("text")
             .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .attr("dy", "0em")
-            .text(function(d) { return d.data; });
-          svg.append("text")
-            // .data(data)
+            .attr("dy", "-1em")
+            .text(function(d) { return d.data; })
+            .style("color", "white")
+          g.append("text")
             .attr("x", width / 20)
-            .attr("y", 250)
+            .attr("y", - 220)
             .attr("text-anchor", "middle")
             .style("font-family", "sans-sherif")
-            .style("font-size", "12px")
+            .style("font-size", "14px")
             .style("font-weight", "bold")
             .text(function(d){
-                return dataPie[0].name +", Amount of alcohol/drugs deaths";
+                return "Amount of deaths related to drugs or alcohol in " + dataPie[0].name;
             });
-          // Make legend
-          legend = svg.selectAll("#piechart")
-          .data(["Alcohol Deaths","Drugs Deaths"])
-          .enter()
-          .append("g")
-          .attr("class", ".legend")
-          .attr("transform", function(d, i) { 
-            console.log(i)
-              return "translate(0," + i + 100 + ")"; 
-          });
+          
         // Fill in all colors of the legend
-        legend.append("rect")
-          .attr("x", width - padding - 100)
-          .attr("y", 5)
-          .attr("width", width)
-          .attr("height", height)
-          .style("fill", d => color(d))
+        g.append("rect")
+          .attr("x", width -350)
+          .attr("y", height - 800)
+          .attr("width", width - 500)
+          .attr("height", height - 560)
+          .attr("transform", function(d, i) { 
+            return "translate(0," + i * 35 + ")"})
+          .style("fill", d => color(d.data))
 
         // Add text to legend
-        legend.append("text")
-              .attr("x", width - 85)
-              .attr("y", height)
-              .style("color", "#FFF")
+        g.append("text")
+              .data(["Alcohol deaths", "Drug deaths"])
+              .attr("x", width - 450)
+              .attr("y", height - 780)
+              .attr("transform", function(d, i) { 
+                return "translate(0," + i * 40 + ")"})
+              .style("color", "red")
               .text(function(d){
               return d;
-              })
-          
+              })          
         }

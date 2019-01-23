@@ -62,4 +62,12 @@ I will fine tune it more in the next days!
 
 # Day 10 (Tuesday, 22-01-2019)
 I spend the day changing my layout, adding a homepage and a navbar, changing my code a little bit.
-I added some style, different html's and some more styling
+I added some style, different html's and some more styling.
+
+# Day 11 (Wednesday, 21-01-2019)
+The legend of the piechart works! It exists and is accurate. It is not very beautiful, but it works.
+I also changed the colours of the pie chart. I added a little smiley at the top of the page.
+I also tried to add a slider for the world map, but I stopped.
+Furthermore, I read some about updating the svg instead of deleting it. It looks pretty difficult, so I will try but don't know if I will succeed and finish. On the main page, you can move a little bit to the left and right.
+I tried to get rid of this, but it did not work. 
+I also added the link to my github, so you can press Whybe in the left upper corner and find my github.

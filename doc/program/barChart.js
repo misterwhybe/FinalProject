@@ -1,7 +1,7 @@
 function make_barchart(data){
                 // Set margins and coordinates for barchart
                 var margin = {top: 15, right: 5, bottom: 60, left: 25};
-                var width = 480 - margin.left - margin.right;
+                var width = 450 - margin.left - margin.right;
                 var height = 380 - margin.top - margin.bottom;
                 var color = d3.scaleThreshold()
                 .domain(["No data",1,2,3,4,5,6,7,8,9,10])
@@ -19,7 +19,7 @@ function make_barchart(data){
                 // Make the SVG 
                 var barchart = d3.select("#chart")
                                 .append("svg")
-                                .attr("width", width + margin.left + margin.right)
+                                .attr("width", width - margin.right)
                                 .attr("height", height + margin.top + margin.bottom);
                 // Scale X and Y
                 var yScale = d3.scaleLinear()
