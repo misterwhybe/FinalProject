@@ -4,9 +4,9 @@ function make_piechart(dataPie){
 
           var data = [alcohol, drugs]
 
-          var width = 660,
-            height = 600,
-            radius = height / 3;
+          var width = 440,
+            height = 660,
+            radius = height / 6;
             padding = 10
 
           var color = d3.scaleOrdinal()
@@ -14,7 +14,7 @@ function make_piechart(dataPie){
 
           var arc = d3.arc()
             .outerRadius(radius - 10)
-            .innerRadius(100);
+            .innerRadius(10);
 
           var labelArc = d3.arc()
             .outerRadius(radius - 40)
@@ -26,10 +26,10 @@ function make_piechart(dataPie){
 
           var svg = d3.select("#piechart")
             .append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("width", width - 100)
+            .attr("height", height - 100)
             .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            .attr("transform", "translate(" + width / 4 + "," + height / 1.5 + ")");
 
           var g = svg.selectAll(".arc")
             .data(pie(data))
@@ -47,22 +47,22 @@ function make_piechart(dataPie){
             .text(function(d) { return d.data; })
             .style("color", "white")
           g.append("text")
-            .attr("x", width / 20)
-            .attr("y", - 220)
+            .attr("x", width / 9)
+            .attr("y", height - 780)
             .attr("text-anchor", "middle")
             .style("font-family", "sans-sherif")
-            .style("font-size", "14px")
-            .style("font-weight", "bold")
+            .style("font-size", "13px")
+            // .style("font-weight", "bold")
             .text(function(d){
                 return "Amount of deaths related to drugs or alcohol in " + dataPie[0].name;
             });
           
         // Fill in all colors of the legend
         g.append("rect")
-          .attr("x", width -350)
-          .attr("y", height - 800)
-          .attr("width", width - 500)
-          .attr("height", height - 560)
+          .attr("x", width / 2.2)
+          .attr("y", height - 600)
+          .attr("width", width / 14)
+          .attr("height", height / 16)
           .attr("transform", function(d, i) { 
             return "translate(0," + i * 35 + ")"})
           .style("fill", d => color(d.data))
@@ -70,10 +70,10 @@ function make_piechart(dataPie){
         // Add text to legend
         g.append("text")
               .data(["Alcohol deaths", "Drug deaths"])
-              .attr("x", width - 450)
-              .attr("y", height - 780)
+              .attr("x", width / 4.3)
+              .attr("y", height - 570)
               .attr("transform", function(d, i) { 
-                return "translate(0," + i * 40 + ")"})
+                return "translate(0," + i * 25 + ")"})
               .style("color", "red")
               .text(function(d){
               return d;

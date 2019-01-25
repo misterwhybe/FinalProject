@@ -34,7 +34,7 @@ function visualization(){
             drugsDeaths.push(Object.values(Deaths.DrugsDeaths)[i])
 
         }
-
+        colourScale = ["No data",1,2,3,4,5,6,7,8,9,10]
         // Set tooltips
         var tip = d3.tip()
                     .attr('class', 'd3-tip')
@@ -54,21 +54,21 @@ function visualization(){
                         + happinessPlace + "<br></span>"
                     })
         // Right margins and coordinates for the map
-        var margin = {top: 20, right: 0, bottom: 0, left: 50},
-                    width = 930 - margin.left - margin.right,
+        var margin = {top: 20, right: 5, bottom: 0, left: 50},
+                    width = 910 - margin.left - margin.right,
                     height = 650 - margin.top - margin.bottom;
         var padding = 35;
         var color = d3.scaleThreshold()
-            .domain(["No data",1,2,3,4,5,6,7,8,9,10])
+            .domain(colourScale)
             .range(["black" ,"#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", 
-                "#41ab5d","#238443","#006837","#004529", "#002529", "#001416"]);
+                "#41ab5d","#238443","#006837","#004529", "#002529", "black"]);
         
          var path = d3.geoPath();
 
         // Make map
         var svg = d3.select("#map")
                     .append("svg")
-                    .attr("width", width)
+                    .attr("width", width - margin.right)
                     .attr("height", height)
                     .style("fill", "green")
                     .append('g')
@@ -133,11 +133,12 @@ function visualization(){
                     
                         // Draws and updates the silder
                         var sliderTime = d3
-                            .sliderRight()
+                            .sliderBottom()
                             .min(d3.min(dataTime))
                             .max(d3.max(dataTime))
                             .step(1)
-                            .height(400)
+                            .height(1)
+                            .width(800)
                             .tickFormat(d3.timeFormat('%Y'))
                             .tickValues(dataTime)
                             .default(new Date(1990, 0, 1))
@@ -153,10 +154,10 @@ function visualization(){
                         var gTime = d3
                             .select('div#slider-time')
                             .append('svg')
-                            .attr('width', 100)
-                            .attr('height', 500)
+                            .attr('width', 1000)
+                            .attr('height', 100)
                             .append('g')
-                            .attr('transform', 'translate(30,30)');
+                            .attr('transform', 'translate(50,50)');
                     
                         // Cals the function to create svg and the slider
                         gTime.call(sliderTime);
@@ -222,7 +223,7 @@ function visualization(){
                 });
                 // Make legend
                 legend = svg.selectAll("#map")
-                            .data(["No data",1,2,3,4,5,6,7,8,9,10])
+                            .data(colourScale)
                             .enter()
                             .append("g")
                             .attr("class", ".legend")
@@ -235,7 +236,10 @@ function visualization(){
                     .attr("y", 5)
                     .attr("width", padding)
                     .attr("height", margin.top)
-                    .style("fill", d => color(d))
+                    .style("fill", function(d){
+                        console.log(d)
+                        return color(d);
+                        })
 
                 // Add text to legend
                 legend.append("text")

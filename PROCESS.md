@@ -71,3 +71,10 @@ I also tried to add a slider for the world map, but I stopped.
 Furthermore, I read some about updating the svg instead of deleting it. It looks pretty difficult, so I will try but don't know if I will succeed and finish. On the main page, you can move a little bit to the left and right.
 I tried to get rid of this, but it did not work. 
 I also added the link to my github, so you can press Whybe in the left upper corner and find my github.
+
+# Day 12 
+HACKATHON
+
+# Day 13 (Friday, 25-01-2019)
+Today I worked on the lay out. The piechart and barchart are below each other, the scaler is on the bottom of the page horizontally, so you can easily use it. I tried to make the scaler work on the worldmap as well, but this seems to be too difficult.
+I had a problem with the legend. The no data colour and the 9-10 colour are the same. I wanted to switch one to grey, but it did not succeed. I will try some more this weekend. I played a lot with the widths because now I have a scroll button from left to right, which I dont want (it seems that one width is too big for my screen, so you have to move to see more). I did not fix it yet, but it should be able to be fixed I think.
