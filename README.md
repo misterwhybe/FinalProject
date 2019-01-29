@@ -1,3 +1,5 @@
+# Open my website!
+if you go to https://github.com/misterwhybe/FinalProject.git you can see my working website!
 # FinalProject
 This is the repository of the final project. I will be working on this in January
 
