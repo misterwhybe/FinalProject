@@ -34,7 +34,7 @@ I tried to fix my pie chart, but i did not improve.
 However, I found a nice example, so I can try to use it tomorrow.
 Maybe, then I can fix my pie chart. I'll keep you updated!
 
-# Day 5(Tuesday, 15-01-2019)
+# Day 5 (Tuesday, 15-01-2019)
 Okay, the pie chart works as well!
 It is still not beautiful, so it needs some polishing, but at least it responds.
 
@@ -78,3 +78,8 @@ HACKATHON
 # Day 13 (Friday, 25-01-2019)
 Today I worked on the lay out. The piechart and barchart are below each other, the scaler is on the bottom of the page horizontally, so you can easily use it. I tried to make the scaler work on the worldmap as well, but this seems to be too difficult.
 I had a problem with the legend. The no data colour and the 9-10 colour are the same. I wanted to switch one to grey, but it did not succeed. I will try some more this weekend. I played a lot with the widths because now I have a scroll button from left to right, which I dont want (it seems that one width is too big for my screen, so you have to move to see more). I did not fix it yet, but it should be able to be fixed I think.
+
+# Day 15 (Monday 29-01 & Tuesday 29-01)
+The last two days I worked on the looks of my website. I changed the position of the bar chart, because it was not interactive anymore when it was next to the world map. I added text and style to the information page. I added a page where you can see my final project. I fine tuned some things and tried to make my slider and worldmap interactive.
+The last part did not work. I also checked for the update SVG instead of remove, but so far nothing worked.
+I changed the button so you go to the requested page inmediately. The pie chart also needed to be moved, because the bar chart was moved.

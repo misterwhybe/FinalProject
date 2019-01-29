@@ -7,7 +7,8 @@ Minor programmeren, Data processing
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<title>Life ladder</title>
+<link rel="icon" href="smiley.jpg" type="image/gif" sizes="16x16">
+<title>Information page</title>
  <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -17,58 +18,94 @@ Minor programmeren, Data processing
         </div>
         <ul class="nav navbar-nav">
         <li ><a href="/linked_views.html">Home</a></li>
-        <!-- <li><a href="/piechart.html">Piechart</a></li> -->
-
         <li class="active"><a href="/information.html">Information</a></li>
         </ul>
     </div>
     </nav>
   <div id="header">
     <h1>General information</h1>
-    <!-- <img src="happiness.png" class="img-rounded" alt="Cinque Terre" max-width="60%" height="auto"> -->
-    <h5>This webpage shows the average score of the life ladder per country. 
-        What is a life ladder? According to The world happiness Report, a life 
+    <div id="worldHappiness">
+    <blockquote cite = "World Happiness Report">
+        <h2>
+            Life Ladder
+        </h2>
+        <p ALIGN = LEFT>
+        This webpage shows the average score of the life ladder per country. 
+        What is a life ladder? According to the World Happiness Report, a life 
         ladder is used when respondents are asked to think of a ladder, with the
-         best possible life for them being a 10, and the worst possible life 
-         being a 0. They are then asked to rate their own current lives on that
-          0 to 10 scale. With a life ladder we can see how residents experience
-          their own life. Remember: this is subjective and we can never be sure 
-          if these numbers are representative. 
-    </h5>
-    <h5>
+        best possible life for them being a 10, and the worst possible life 
+        being a 0. They are then asked to rate their own current lives on that
+        0 to 10 scale. With a life ladder we can see how residents experience
+        their own life. <br>keep in mind: this is subjective and we can never 
+        be sure if these numbers are representative.
+          <form>
+                <input type="button" value="Go to World Happiness" 
+                onclick="window.location.href='http://worldhappiness.report/ed/2018/'" />
+          </form>
+        </p>
+    </blockquote>
+    </div>
+    <div id="Drugs">
+    <blockquote>
+        <h2>
+            Drugs Deaths
+        </h2>
+        <p ALIGN = LEFT>
         The colours represent a certain average. Click a country and a bar chart
         will show. Here, you can see the average of that specific country over 
         the last years. If a certain year doesn't have a bar, there wasn't any 
         data from this year. Hover over the bar to see it's value.
-        After you clicked a country, a bar chart will come. Here, you can see 
-        how many people died in that country because of drugs and alcohol. 
+        After you clicked a country, a pie chart will also show. Here, you can see 
+        how many people died in that country as a result of drugs and alcohol. 
         Use the slider next to it to select the year you want to see.
-    </h5>
-    </p>
-    <button onclick="myFunction()">Go to World Happiness</button>
-    <button onclick="myFunction1()">Get drugs</button>
-    <p id="demo"></p>
-    <script>
-    function myFunction() {
-         var str = "World happiness report";
-         var result = str.link("http://worldhappiness.report/ed/2018/"); 
-         document.getElementById("demo").innerHTML = result; 
-    }
-    function myFunction1() {
-         var str = "Substance use";
-         var result = str.link("https://ourworldindata.org/substance-use"); 
-         document.getElementById("demo").innerHTML = result; 
-    }
-  </script>
+        
+        <form>
+                <input type="button" value="Go to Drugs Deaths" 
+                onclick="window.location.href='https://ourworldindata.org/substance-use'" />
+        </form>
+        </p>
+    </blockquote>
+    </div>
+    <div id="barchart">
+    <blockquote>
+        <h2>
+            Bar Chart
+        </h2>
+        <p>
+            A bar chart consists of several bars. Here, it contains the average
+            score for the life ladder. It only shows one country, the country 
+            you clicked on. If you click another country, this bar chart will 
+            go away and a new one will take its place. It shows the years 
+            2005-2016. Sometimes, a certain year is empty. This means there
+            is no data available for this year. The colour of the bars is 
+            the same as the legend of the worldmap, so the higher the score 
+            the higher the score (from lightgreen to darkgreen)
+        </p>
+    </blockquote>
+    </div>
+    <div id="piechart">
+        <blockquote>
+            <h2>
+                Pie Chart
+            </h2>
+            <p>
+                After a country is clicked, a pie chart will be shown on the 
+                right. This pie chart shows us the amount of deaths in that 
+                country which are related to drugs and alcohol. A slider is 
+                available under the world map. Use this slider to select 
+                which year you want to see. The standard year is 1990. Take 
+                the slider and move it!
+            </p>
+        </blockquote>
+    </div>
   <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
   <script src="http://d3js.org/queue.v1.min.js"></script>
   <script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
   <script src="d3-tip.js"></script>
   <link rel="stylesheet" href="style.css">
-
-   
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="information.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </body>
 </html>

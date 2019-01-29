@@ -4,9 +4,9 @@ function make_piechart(dataPie){
 
           var data = [alcohol, drugs]
 
-          var width = 440,
-            height = 660,
-            radius = height / 6;
+          var width = 450,
+            height = 400,
+            radius = height / 4;
             padding = 10
 
           var color = d3.scaleOrdinal()
@@ -27,7 +27,7 @@ function make_piechart(dataPie){
           var svg = d3.select("#piechart")
             .append("svg")
             .attr("width", width - 100)
-            .attr("height", height - 100)
+            .attr("height", height )
             .append("g")
             .attr("transform", "translate(" + width / 4 + "," + height / 1.5 + ")");
 
@@ -47,12 +47,11 @@ function make_piechart(dataPie){
             .text(function(d) { return d.data; })
             .style("color", "white")
           g.append("text")
-            .attr("x", width / 9)
-            .attr("y", height - 780)
+            .attr("x", width / 7)
+            .attr("y", height - 550)
             .attr("text-anchor", "middle")
             .style("font-family", "sans-sherif")
-            .style("font-size", "13px")
-            // .style("font-weight", "bold")
+            .style("font-size", "12px")
             .text(function(d){
                 return "Amount of deaths related to drugs or alcohol in " + dataPie[0].name;
             });
@@ -60,7 +59,7 @@ function make_piechart(dataPie){
         // Fill in all colors of the legend
         g.append("rect")
           .attr("x", width / 2.2)
-          .attr("y", height - 600)
+          .attr("y", height - 500)
           .attr("width", width / 14)
           .attr("height", height / 16)
           .attr("transform", function(d, i) { 
@@ -69,11 +68,11 @@ function make_piechart(dataPie){
 
         // Add text to legend
         g.append("text")
-              .data(["Alcohol deaths", "Drug deaths"])
+              .data(["Alcohol deaths", "Drugs deaths"])
               .attr("x", width / 4.3)
-              .attr("y", height - 570)
+              .attr("y", height - 480)
               .attr("transform", function(d, i) { 
-                return "translate(0," + i * 25 + ")"})
+                return "translate(0," + i * 28 + ")"})
               .style("color", "red")
               .text(function(d){
               return d;

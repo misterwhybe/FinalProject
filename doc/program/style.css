@@ -10,7 +10,7 @@ Minor programmeren, Data processing
     padding: 40px; /* some padding */
     text-align: center; /* center the text */
     background: #fffefe; /* green background */
-    color: #630f0f; /* white text color */
+    color: rgb(31, 1, 1); /* white text color */
   }
 /* Style the top navigation bar */
 .navbar {

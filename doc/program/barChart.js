@@ -1,8 +1,8 @@
 function make_barchart(data){
                 // Set margins and coordinates for barchart
                 var margin = {top: 15, right: 5, bottom: 60, left: 25};
-                var width = 415 - margin.left - margin.right;
-                var height = 350 - margin.top - margin.bottom;
+                var width = 480 - margin.left - margin.right;
+                var height = 450 - margin.top - margin.bottom;
                 var color = d3.scaleThreshold()
                 .domain(["No data",1,2,3,4,5,6,7,8,9,10])
                 .range(["black" ,"#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", 

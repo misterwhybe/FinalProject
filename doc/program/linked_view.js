@@ -32,7 +32,6 @@ function visualization(){
             countriesDeaths.push(Object.values(Deaths.Entity)[i])
             alcoholDeaths.push(Object.values(Deaths.AlcoholDeaths)[i])
             drugsDeaths.push(Object.values(Deaths.DrugsDeaths)[i])
-
         }
         colourScale = ["No data",1,2,3,4,5,6,7,8,9,10]
         // Set tooltips
@@ -95,13 +94,14 @@ function visualization(){
                 .append("path")
                 .attr("d", path)
                 .style("fill", function(d) {
+                    
                     if(countriesHappiness.includes(d.properties.name)){
-                        var place = countriesHappiness.indexOf(d.properties.name)
-                        HappinessMark = happiness[place]
-                        return (color(HappinessMark));
+                      var place = countriesHappiness.indexOf(d.properties.name)
+                      HappinessMark = happiness[place]
+                      return (color(HappinessMark));
                     }
                     return "black"
-                    })  
+                })
                         
                 .style('stroke-width', 1.5)
                 .style("opacity",0.8)
@@ -113,7 +113,6 @@ function visualization(){
                     if(countriesHappiness.includes(d.properties.name)){
                         tip.show(d);
                     }
-    
                     d3.select(this)
                     .style("opacity", 1)
                     .style("stroke","white")
@@ -154,7 +153,7 @@ function visualization(){
                         var gTime = d3
                             .select('div#slider-time')
                             .append('svg')
-                            .attr('width', 1000)
+                            .attr('width', 950)
                             .attr('height', 100)
                             .append('g')
                             .attr('transform', 'translate(50,50)');
@@ -164,7 +163,6 @@ function visualization(){
                     
                         // Returns the value of the selected year
                         return d3.timeFormat("%Y")(sliderTime.value())
-                    
                         }
                     var data = [];
                     HappinessNumber = 0
@@ -184,7 +182,6 @@ function visualization(){
                                 data.push({name: d.properties.name,
                                 value: 0, year: yearOfHappiness})
                             } 
-  
                         }  
                         make_barchart(data)
                     }
@@ -210,7 +207,6 @@ function visualization(){
                             {name: d.properties.name, value: DeathsDrugs})
                         make_piechart(dataPie)
                     }
-                   
                     })
                 // If the cursor moves away from the country, stop showing data 
                 .on('mouseout', function(d){
@@ -250,8 +246,6 @@ function visualization(){
                         return d;
                         })
                     }
-     
-
     }).catch(function(e){
         throw(e);
     });
