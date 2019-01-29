@@ -82,4 +82,6 @@ I had a problem with the legend. The no data colour and the 9-10 colour are the 
 # Day 15 (Monday 29-01 & Tuesday 29-01)
 The last two days I worked on the looks of my website. I changed the position of the bar chart, because it was not interactive anymore when it was next to the world map. I added text and style to the information page. I added a page where you can see my final project. I fine tuned some things and tried to make my slider and worldmap interactive.
 The last part did not work. I also checked for the update SVG instead of remove, but so far nothing worked.
-I changed the button so you go to the requested page inmediately. The pie chart also needed to be moved, because the bar chart was moved.
+I changed the button so you go to the requested page inmediately. The pie chart also needed to be moved, because the bar chart was moved. I made sure my website is viewable on Github. 
+I changed the front picture, so it looks a bit better. I worked a bit on my readme.
+I checked for small errors as well, like typo's.

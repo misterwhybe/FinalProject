@@ -18,19 +18,26 @@ Minor programmeren, Data processing
         "https://github.com/misterwhybe/FinalProject.git">Whybe</a>
       </div>
       <ul class="nav navbar-nav">
-            <li class="active"><a href="https://misterwhybe.github.io/FinalProject/doc/program/linked_views.html">Home</a></li>
-            <!-- <li class="active"><a href="linked_views.html">Home</a></li> -->
-
+        <li class="active"><a href="https://misterwhybe.github.io/FinalProject/doc/program/linked_views.html">Home</a></li>
         <li><a href="https://misterwhybe.github.io/FinalProject/doc/program/information.html">Information</a></li>
-        <!-- <li><a href="information.html">Information</a></li> -->
+        <!-- <li class="active"><a href="linked_views.html">Home</a></li> 
+        <li><a href="information.html">Information</a></li> -->
       </ul>
     </div>
   </nav>
-  <div id="header">
-    <h1>Life ladder per country</h1>
-    <img src="happiness.png" class="img-rounded" alt="Cinque Terre" 
-        max-width="50%" height="auto">
-    <blockquote>
+  <div class="bgimg">
+    <div class="middle">
+      <h1>Life ladder per country</h1>  
+    </div>
+    <div class="bottomleft">
+        <p>
+            Created by Wiebe Jelsma
+        </p>
+    </div>  
+  
+    <div id="welcome">
+      <blockquote>
+          <p>
         Click a country to start exploring! Below the world map, a bar chart 
         will show the 
         life ladder score per year of that country.  <br/>
@@ -38,10 +45,11 @@ Minor programmeren, Data processing
         a slider below the world map. Use this slider to select the year the 
         pie chart has to display.  <br/>
         Choose 'information' in the upper left corner to read more about
-        this webpage! 
-    </blockquote>
-    </p>
+        this webpage! <br> N.D means No Data. </p>
+      </blockquote>
+    </div>
   </div>
+
   
   <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
   <script src="http://d3js.org/queue.v1.min.js"></script>

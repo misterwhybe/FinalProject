@@ -96,3 +96,49 @@ pointer-events: none;
 .details{
     color:white;
 }
+body, html{
+    height: 100%;
+}
+.bgimg {
+    background-image: url("happiness.png");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.bottomleft{
+    position: absolute;
+    bottom: 0;
+    left: 85%;
+    color: white;
+}
+.middle {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    color: white;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+blockquote
+{
+  font-style: italic;
+  font-size: 15px;
+  font-family: "Consolas", "Times New Roman", Verdana;
+  border-left: none;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+#welcome {
+    display: inline-flex;
+    content: '';
+    margin-left: 10 px;
+    margin-top: 250px;
+    width:400px;
+    height:280px;
+    border-left: none;
+    border: 4px solid white;
+    /* border-left: 10px solid white; */
+    border-radius: 6px;
+    color: white;
+}
