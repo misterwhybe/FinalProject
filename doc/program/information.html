@@ -18,7 +18,9 @@ Minor programmeren, Data processing
         </div>
         <ul class="nav navbar-nav">
         <li ><a href="https://misterwhybe.github.io/FinalProject/doc/program/linked_views.html">Home</a></li>
+        <!-- <li ><a href="linked_views.html">Home</a></li> -->
         <li class="active"><a href="https://misterwhybe.github.io/FinalProject/doc/program/information.html">Information</a></li>
+        <!-- <li class="active"><a href="information.html">Information</a></li> -->
         </ul>
     </div>
     </nav>
@@ -36,7 +38,7 @@ Minor programmeren, Data processing
         best possible life for them being a 10, and the worst possible life 
         being a 0. They are then asked to rate their own current lives on that
         0 to 10 scale. With a life ladder we can see how residents experience
-        their own life. <br>keep in mind: this is subjective and we can never 
+        their own life. <br>Keep in mind: this is subjective and we can never 
         be sure if these numbers are representative.
           <form>
                 <input type="button" value="Go to World Happiness" 
@@ -48,19 +50,19 @@ Minor programmeren, Data processing
     <div id="Drugs">
     <blockquote>
         <h2>
-            Drugs Deaths
+            Drug related Deaths
         </h2>
         <p ALIGN = LEFT>
-        The colours represent a certain average. Click a country and a bar chart
-        will show. Here, you can see the average of that specific country over 
-        the last years. If a certain year doesn't have a bar, there wasn't any 
-        data from this year. Hover over the bar to see it's value.
-        After you clicked a country, a pie chart will also show. Here, you can see 
-        how many people died in that country as a result of drugs and alcohol. 
-        Use the slider next to it to select the year you want to see.
+        After you click on a country, a pie chart will also be shown. This pie chart
+         will show how many people died in that specified country related to 
+         drugs and alcohol. Click the button to go to the source. The problem 
+        with this dataset is that it contains the amount of deaths per year per
+         country, and the numbers have a lot of digits. You would think that 
+        the deaths will be a whole number, and not a float. Therefore, the 
+        number shown is rounded.
         
         <form>
-                <input type="button" value="Go to Drugs Deaths" 
+                <input type="button" value="Go to Drug Related Deaths" 
                 onclick="window.location.href='https://ourworldindata.org/substance-use'" />
         </form>
         </p>
@@ -73,13 +75,13 @@ Minor programmeren, Data processing
         </h2>
         <p>
             A bar chart consists of several bars. Here, it contains the average
-            score for the life ladder. It only shows one country, the country 
-            you clicked on. If you click another country, this bar chart will 
-            go away and a new one will take its place. It shows the years 
-            2005-2016. Sometimes, a certain year is empty. This means there
-            is no data available for this year. The colour of the bars is 
-            the same as the legend of the worldmap, so the higher the score 
-            the higher the score (from lightgreen to darkgreen)
+            score for the life ladder. It only shows the one country you  
+            clicked on. If you click another country, this bar chart will 
+            disappear and a new one will take its place. It shows the years 
+            2005-2016. A missing bar means there is no data available for this 
+            year. The colour of the bars is 
+            the same as the worldmap legend, so the denser the colour 
+            the higher the score (ranging from lightgreen to darkgreen).
         </p>
     </blockquote>
     </div>
@@ -90,7 +92,7 @@ Minor programmeren, Data processing
             </h2>
             <p>
                 After a country is clicked, a pie chart will be shown on the 
-                right. This pie chart shows us the amount of deaths in that 
+                right. This pie chart shows the amount of deaths in that 
                 country which are related to drugs and alcohol. A slider is 
                 available under the world map. Use this slider to select 
                 which year you want to see. The standard year is 1990. Take 

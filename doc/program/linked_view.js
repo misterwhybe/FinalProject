@@ -33,7 +33,7 @@ function visualization(){
             alcoholDeaths.push(Object.values(Deaths.AlcoholDeaths)[i])
             drugsDeaths.push(Object.values(Deaths.DrugsDeaths)[i])
         }
-        colourScale = ["No data",1,2,3,4,5,6,7,8,9,10]
+        colourScale = ["N.D.",1,2,3,4,5,6,7,8,9,10]
         // Set tooltips
         var tip = d3.tip()
                     .attr('class', 'd3-tip')
@@ -56,7 +56,7 @@ function visualization(){
         var margin = {top: 20, right: 5, bottom: 0, left: 50},
                     width = 910 - margin.left - margin.right,
                     height = 650 - margin.top - margin.bottom;
-        var padding = 35;
+        var padding = 25;
         var color = d3.scaleThreshold()
             .domain(colourScale)
             .range(["black" ,"#ffffe5", "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", 
@@ -229,7 +229,7 @@ function visualization(){
                 // Fill in all colors of the legend
                 legend.append("rect")
                     .attr("x", width - padding)
-                    .attr("y", 5)
+                    .attr("y", 0)
                     .attr("width", padding)
                     .attr("height", margin.top)
                     .style("fill", function(d){
@@ -239,8 +239,8 @@ function visualization(){
 
                 // Add text to legend
                 legend.append("text")
-                        .attr("x", width - 85)
-                        .attr("y", margin.top)
+                        .attr("x", width - 60)
+                        .attr("y", 14)
                         .style("color", "#FFF")
                         .text(function(d){
                         return d;
