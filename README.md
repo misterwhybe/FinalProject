@@ -9,16 +9,16 @@ This is the repository of the final project. I will be working on this in Januar
 
 # How happy are we really?
 Create the map of the World with average levels of the life ladder for each country. Specify which country you want to see. Each colour is a different level (0-10) to see how the countries are divided.
-![doc/worldmap.PNG]
+![doc/worldmap.PNG] (https://github.com/misterwhybe/FinalProject/blob/master/doc/worldmap.PNG)
 My worldmap
 I will use the World Happiness Report. I will download the report of 2018, because it contains the years 2005-2017 per country. 
 http://worldhappiness.report/download/.
 Hereby, I can specify which country has which happiness score in which year. The item I will use is the Life ladder. It asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. This will give a mean per year per country.
 After a country is clicked on, a bar chart will come with each score per year. This way it is possible to see the development of the score per country. 
-![doc/barchart.PNG] 
+![doc/barchart.PNG] (https://github.com/misterwhybe/FinalProject/blob/master/doc/barchart.PNG)
 A pie chart will come to show the amount of deaths related to drugs and alcohol in that country.
 A slider can be used to specify which year, ranging from 1990 to 2016, you want to see. 
-![doc/piechart.PNG]
+![doc/piechart.PNG] (https://github.com/misterwhybe/FinalProject/blob/master/doc/piechart.PNG)
 By using the slider, the change of deaths will be visual.
 
 
