@@ -44,6 +44,8 @@ Hereby, we can see if there is a correlation between the happiness level and the
 I use https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js for the slider! This way it was easier to create a slider, but not too easy. 
 I make use of pandas and xlrd.
 Bootstrap is used to style the webpage.
+Tooltip is used to hover over some parts of the webpage.
+I used the smiley image and happiness image, I googled on happiness and chose the two pictures!
 
 ### Review:
 https://ourworldindata.org/happiness-and-life-satisfaction
@@ -56,4 +58,3 @@ To form a bar chart with missing data was pretty difficult.
 I tried to make the slider work for the worldmap as well, but this turned out to be too difficult.
 Styling a website takes way more time than I would have thought. 
 The pie chart was also quite hard to make, but luckily the data was complete so when I could see the pie chart, it worked directly (only getting the SVG right took extra time).
- 
