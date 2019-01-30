@@ -43,7 +43,7 @@ function make_piechart(dataPie){
 
           g.append("text")
             .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
-            .attr("dy", "-1em")
+            .attr("dy", "-1.5em")
             .text(function(d) { return d.data; })
             .style("color", "white")
           g.append("text")
