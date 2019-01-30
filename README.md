@@ -1,5 +1,5 @@
 # Welcome to the average Life Ladder Visualization
-Welcome to my website! Try it out!
+Welcome to my website! Try it out! 
 
 # Open my website!
 if you go to https://misterwhybe.github.io/FinalProject you can see my working website!
