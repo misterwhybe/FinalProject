@@ -6,110 +6,124 @@ Minor programmeren, Data processing
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href=
+  "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link rel="icon" href="../doc/smiley.jpg" type="image/gif" sizes="16x16">
 <title>Information page</title>
- <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href=
-        "https://github.com/misterwhybe/FinalProject.git">Whybe</a>
-        </div>
-        <ul class="nav navbar-nav">
-        <li ><a href="https://misterwhybe.github.io/FinalProject/doc/program/linked_views.html">Home</a></li>
-        <li class="active"><a href="https://misterwhybe.github.io/FinalProject/doc/program/information.html">Information</a></li>
-        <!-- <li ><a href="linked_views.html">Home</a></li> 
-        <li class="active"><a href="information.html">Information</a></li> -->
-        </ul>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=
+      "https://github.com/misterwhybe/FinalProject.git">Whybe</a>
     </div>
-    </nav>
+    <ul class="nav navbar-nav">
+      <li ><a href=
+        "https://misterwhybe.github.io/FinalProject/doc/program/linked_views.html">
+        Home</a></li>
+      <li class="active">
+        <a href=
+          "https://misterwhybe.github.io/FinalProject/doc/program/information.html">
+          Information</a></li>
+      <!-- <li ><a href="linked_views.html">Home</a></li> 
+      <li class="active"><a href="information.html">Information</a></li> -->
+    </ul>
+  </div>
+  </nav>
   <div id="header">
     <h1>General information</h1>
     <div id="worldHappiness">
     <blockquote cite = "World Happiness Report">
-        <h2>
-            Life Ladder
-        </h2>
-        <p ALIGN = LEFT>
+      <h2>
+        Life Ladder
+      </h2>
+      <p ALIGN = LEFT>
         This webpage shows the average score of the life ladder per country. 
         What is a life ladder? According to the World Happiness Report, a life 
-        ladder is used when respondents are asked to think of a ladder, with the
-        best possible life for them being a 10, and the worst possible life 
-        being a 0. They are then asked to rate their own current lives on that
+        ladder is used when respondents are asked to think of a ladder, with 
+        the best possible life for them being a 10, and the worst possible life
+         being a 0. They are then asked to rate their own current lives on that
         0 to 10 scale. With a life ladder we can see how residents experience
         their own life. Hover over a country to see the average life ladder.
         <br>Keep in mind: this is subjective and we can never 
         be sure if these numbers are representative.
-          <form>
-                <input type="button" value="Go to World Happiness" 
-                onclick="window.location.href='http://worldhappiness.report/ed/2018/'" />
-          </form>
-        </p>
+        <form>
+          <input type="button" value="Go to World Happiness" 
+          onclick="window.location.href=
+            'http://worldhappiness.report/ed/2018/'" />
+        </form>
+      </p>
     </blockquote>
     </div>
     <div id="Drugs">
-    <blockquote>
+      <blockquote>
         <h2>
-            Drug related Deaths
+          Drug related Deaths
         </h2>
         <p ALIGN = LEFT>
-        After you click on a country, a pie chart will also be shown. This pie chart
-         will show how many people died in that specified country related to 
-         drugs and alcohol. Click the button to go to the source. The problem 
-        with this dataset is that it contains the amount of deaths per year per
-         country, and the numbers have a lot of decimals. You would think that 
-        the deaths will be a whole number, and not a float. Therefore, the 
-        number shown is rounded.
-        
+        After you click on a country, a pie chart will also be shown. This pie 
+        chart will show how many people died in that specified country related 
+        to drugs and alcohol. Click the button to go to the source. The problem
+         with this dataset is that it contains the amount of deaths per year 
+        per country, and the numbers have a lot of decimals. You would think 
+        that the deaths will be a whole number, and not a float. Therefore, the
+         number shown is rounded.
         <form>
-                <input type="button" value="Go to Drug Related Deaths" 
-                onclick="window.location.href='https://ourworldindata.org/substance-use'" />
+          <input type="button" value="Go to Drug Related Deaths" 
+          onclick="window.location.href=
+          'https://ourworldindata.org/substance-use'"/>
         </form>
         </p>
-    </blockquote>
+      </blockquote>
     </div>
     <div id="barchart">
-    <blockquote>
+      <blockquote>
         <h2>
-            Bar Chart
+          Bar Chart
         </h2>
         <p>
-            A bar chart consists of several bars. Here, it contains the average
-            score for the life ladder. It only shows the one country you  
-            clicked on. If you click another country, this bar chart will 
-            disappear and a new one will take its place. It shows the years 
-            2005-2016. A missing bar means there is no data available for this 
-            year. The colour of the bars is 
-            the same as the worldmap legend, so the denser the colour 
-            the higher the score (ranging from lightgreen to darkgreen).
-            Hover over a bar and it will show it's value!
+          A bar chart consists of several bars. Here, it contains the average
+          score for the life ladder. It only shows the one country you  
+          clicked on. If you click another country, this bar chart will 
+          disappear and a new one will take its place. It shows the years 
+          2005-2016. A missing bar means there is no data available for this 
+          year. The colour of the bars is 
+          the same as the worldmap legend, so the denser the colour 
+          the higher the score (ranging from lightgreen to darkgreen).
+          Hover over a bar and it will show it's value!
         </p>
-    </blockquote>
+      </blockquote>
     </div>
     <div id="piechart">
-        <blockquote>
-            <h2>
-                Pie Chart
-            </h2>
-            <p>
-                After a country is clicked, a pie chart will be shown on the 
-                right. This pie chart shows the amount of deaths in that 
-                country which are related to drugs and alcohol. A slider is 
-                available under the world map. Use this slider to select 
-                which year you want to see. The standard year is 1990. Take 
-                the slider and move it!
-            </p>
-        </blockquote>
+      <blockquote>
+        <h2>
+          Pie Chart
+        </h2>
+        <p>
+          After a country is clicked, a pie chart will be shown on the 
+          right. This pie chart shows the amount of deaths in that 
+          country which are related to drugs and alcohol. A slider is 
+          available under the world map. Use this slider to select 
+          which year you want to see. The standard year is 1990. Take 
+          the slider and move it!
+        </p>
+      </blockquote>
     </div>
+  </div>
   <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
   <script src="http://d3js.org/queue.v1.min.js"></script>
-  <script src="https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js"></script>
+  <script src=
+    "https://unpkg.com/d3-simple-slider/build/d3-simple-slider.js">
+  </script>
   <script src="http://d3js.org/topojson.v1.min.js"></script>
   <script src="js/d3-tip.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/information.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+  </script>
 </body>
 </html>

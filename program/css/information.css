@@ -1,3 +1,9 @@
+/*  
+Wiebe Jelsma (12468223)
+Minor programmeren, Final project
+January, 2019
+*/
+/* make sure blockquote + paragraphs are good, next to each other, look nice */
 blockquote
 {
   font-style: italic;
@@ -7,31 +13,31 @@ blockquote
   padding-left: 24px;
 }
 blockquote p {
-    display: inline;
-    position: relative;
+  display: inline;
+  position: relative;
 }
 
 #worldHappiness {
-    display: inline-flex;
-    margin-left: 10 px;
-    width:620px;
-    height:350px;
+  display: inline-flex;
+  margin-left: 10 px;
+  width:620px;
+  height:350px;
 }
 #Drugs {
-    display: inline-flex;
-    margin-left: 10 px;
-    width:620px;
-    height:350px;
+  display: inline-flex;
+  margin-left: 10 px;
+  width:620px;
+  height:350px;
 }
 #barchart {
-    display: inline-flex;
-    margin-left: 10 px;
-    width:620px;
-    height:250px;
+  display: inline-flex;
+  margin-left: 10 px;
+  width:620px;
+  height:250px;
 }
 #piechart {
-    display: inline-flex;
-    margin-left: 10 px;
-    width:620px;
-    height:250px;
+  display: inline-flex;
+  margin-left: 10 px;
+  width:620px;
+  height:250px;
 }
