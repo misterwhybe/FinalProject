@@ -9,7 +9,7 @@ This is the repository of the final project. I will be working on this in Januar
 
 # How happy are we really?
 Create the map of the World with average levels of the life ladder for each country. Specify which country you want to see. Each colour is a different level (0-10) to see how the countries are divided.
-![doc/worldmap.PNG] (https://github.com/misterwhybe/FinalProject/blob/master/doc/worldmap.PNG)
+![doc/worldmap.PNG] (doc/worldmap.png?raw=true "Worldmap")
 My worldmap
 I will use the World Happiness Report. I will download the report of 2018, because it contains the years 2005-2017 per country. 
 http://worldhappiness.report/download/.
