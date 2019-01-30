@@ -85,3 +85,12 @@ The last part did not work. I also checked for the update SVG instead of remove,
 I changed the button so you go to the requested page inmediately. The pie chart also needed to be moved, because the bar chart was moved. I made sure my website is viewable on Github. 
 I changed the front picture, so it looks a bit better. I worked a bit on my readme.
 I checked for small errors as well, like typo's.
+
+# Day 16(Wednesday, 30-01)
+Today is the last day.
+I spend it on imporving the website, fix some bugs/errors, get an unlicense, update the readme, put things in folders.
+Now, most of my files are in a folder. For pictures, go to doc. For everything for my program, go to program.
+We also had the last team meeting. 
+My proposal was gone, so I went back into week one to get the original one back.
+The link to my website is still displayed on an ugly website, the index.html.
+I dont really like this, but I don't have enough time to fix it I think.

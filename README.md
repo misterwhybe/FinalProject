@@ -50,4 +50,7 @@ I got a map via: http://d3js.org/topojson.v1.min.js
 I used D3 via: https://d3js.org/d3.v5.min.js and http://d3js.org/queue.v1.min.js.
 I accept their Licence and respect it. 
 
+## License
+My work in unlicensed, so feel free to use whatever you want/need!
+
 ## Wiebe Jelsma (12468223)
