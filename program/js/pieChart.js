@@ -84,7 +84,7 @@ function make_piechart(dataPie){
 
   // Add text to legend
   g.append("text")
-    .data(["Alcohol deaths", "Drugs deaths"])
+    .data(["Alcohol deaths", "Drug deaths"])
     .attr("x", width / 4.3)
     .attr("y", height - 480)
     .attr("transform", function(d, i) { 
