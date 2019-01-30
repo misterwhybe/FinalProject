@@ -14,7 +14,7 @@ http://worldhappiness.report/download/.
 Hereby, I can specify which country has which happiness score in which year. The item I will use is the Life ladder. It asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. This will give a mean per year per country.
 After a country is clicked on, a bar chart will come with each score per year. This way it is possible to see the development of the score per country. 
 ![barchart](https://user-images.githubusercontent.com/44019712/51989654-c5e88880-24a7-11e9-8cfa-096744f7aae8.PNG)
-A pie chart will come to show the amount of deaths related to drugs and alcohol in that country.
+ A pie chart will come to show the amount of deaths related to drugs and alcohol in that country.
 A slider can be used to specify which year, ranging from 1990 to 2016, you want to see. 
 ![piechart](https://user-images.githubusercontent.com/44019712/51989687-d698fe80-24a7-11e9-9773-ee6231f5dc66.PNG)
 By using the slider, the change of deaths will be visual.
