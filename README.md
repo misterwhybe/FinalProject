@@ -9,16 +9,16 @@ This is the repository of the final project. I will be working on this in Januar
 
 # How happy are we really?
 Create the map of the World with average levels of the life ladder for each country. Specify which country you want to see. Each colour is a different level (0-10) to see how the countries are divided.
-![worldmap](https://user-images.githubusercontent.com/44019712/51989707-e1ec2a00-24a7-11e9-8fa9-03df630ad352.PNG)
+![worldmap](https://user-images.githubusercontent.com/44019712/51989707-e1ec2a00-24a7-11e9-8fa9-03df630ad352.PNG = 250x250)
 My worldmap
 I will use the World Happiness Report. I will download the report of 2018, because it contains the years 2005-2017 per country. 
 http://worldhappiness.report/download/.
 Hereby, I can specify which country has which happiness score in which year. The item I will use is the Life ladder. It asks respondents to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. This will give a mean per year per country.
 After a country is clicked on, a bar chart will come with each score per year. This way it is possible to see the development of the score per country. 
-![barchart](https://user-images.githubusercontent.com/44019712/51989654-c5e88880-24a7-11e9-8cfa-096744f7aae8.PNG)
+![barchart](https://user-images.githubusercontent.com/44019712/51989654-c5e88880-24a7-11e9-8cfa-096744f7aae8.PNG= 250x250)
 A pie chart will come to show the amount of deaths related to drugs and alcohol in that country.
 A slider can be used to specify which year, ranging from 1990 to 2016, you want to see. 
-![piechart](https://user-images.githubusercontent.com/44019712/51989687-d698fe80-24a7-11e9-9773-ee6231f5dc66.PNG)
+![piechart](https://user-images.githubusercontent.com/44019712/51989687-d698fe80-24a7-11e9-9773-ee6231f5dc66.PNG= 250x250)
 By using the slider, the change of deaths will be visual.
 
 
