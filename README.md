@@ -1,4 +1,4 @@
-#Life Ladder Visualization
+# Life Ladder Visualization
 
 # Open my website!
 Go to https://misterwhybe.github.io/FinalProject to be directed to my website!
