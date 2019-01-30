@@ -15,7 +15,7 @@ Hereby, I can specify which country has which happiness score in which year. The
 After a country is clicked on, a bar chart will come with each score per year. This way it is possible to see the development of the score per country. The bar chart will display the years 2005 to 2017.
 ![barchart](https://user-images.githubusercontent.com/44019712/51989654-c5e88880-24a7-11e9-8cfa-096744f7aae8.PNG)
  A pie chart will come to show the amount of deaths related to drugs and alcohol in that country.
-A slider can be used to specify which year, ranging from 1990 to 2016, you want to see. 
+A slider can be used to specify which year you want to see.
 ![piechart](https://user-images.githubusercontent.com/44019712/51989687-d698fe80-24a7-11e9-9773-ee6231f5dc66.PNG)
 By using the slider, the change of deaths will be visual.
 
