@@ -1,4 +1,5 @@
 # Life Ladder Visualization
+[Click here to go to my video!](https://youtu.be/cY3TJjEuCUg)
 
 # Open my website!
 Go to https://misterwhybe.github.io/FinalProject to be directed to my website!
